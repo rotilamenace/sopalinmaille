@@ -1,13 +1,15 @@
-/* Police globale */
+/* Police globale et centrage principal */
 body {
   font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background: #f5f7fa; /* fond clair */
-  color: #333;
+  background: #f0f4f0; /* fond très clair vert pâle */
+  color: #1b3a2f; /* texte principal vert foncé */
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   margin: 0;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 /* Carte centrale */
@@ -16,16 +18,17 @@ body {
   padding: 25px 20px;
   border-radius: 16px;
   max-width: 400px;
-  width: 90%;
+  width: 100%;
   text-align: center;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 18px rgba(27, 58, 47, 0.2); /* ombre légèrement verte */
+  box-sizing: border-box;
 }
 
 /* Titres */
 .card h1 {
   font-size: 1.8em;
   margin-bottom: 15px;
-  color: #ff6b81; /* rose doux */
+  color: #a88c39; /* doré doux */
 }
 
 /* Paragraphes */
@@ -35,42 +38,46 @@ body {
   line-height: 1.4;
 }
 
-/* Inputs */
+/* Inputs centrés et adaptés */
 input {
   width: 100%;
+  max-width: 100%;
   padding: 14px;
   margin: 10px 0;
   border-radius: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #a88c39; /* doré */
   font-size: 1em;
   outline: none;
   transition: border 0.2s;
+  box-sizing: border-box;
 }
 
 input:focus {
-  border-color: #ff6b81;
+  border-color: #1b3a2f; /* vert sapin foncé */
 }
 
-/* Boutons */
+/* Boutons centrés et adaptés */
 button {
   width: 100%;
+  max-width: 100%;
   padding: 14px;
-  background: #ff6b81;
-  color: white;
+  background: #1b3a2f; /* vert sapin */
+  color: #f5e6a6; /* doré clair */
   border: none;
   border-radius: 10px;
   font-size: 1em;
   cursor: pointer;
   transition: background 0.3s;
+  box-sizing: border-box;
 }
 
 button:hover {
-  background: #ff4757;
+  background: #154229; /* vert encore plus foncé */
 }
 
 /* Messages d'erreur */
 #error {
-  color: #ff4b4b;
+  color: #cc4b4b; /* rouge léger pour erreur */
   margin-top: 10px;
   font-weight: bold;
 }
@@ -80,7 +87,9 @@ button:hover {
   display: flex;
   gap: 10px;
   align-items: center;
+  justify-content: center;
   margin: 15px 0;
+  flex-wrap: wrap;
 }
 
 .images img {
@@ -88,7 +97,17 @@ button:hover {
   max-width: 48%;
   object-fit: contain;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(27,58,47,0.2);
+}
+
+/* Image finale responsive et centrée */
+.card img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(27,58,47,0.2);
 }
 
 /* Responsive mobile */
