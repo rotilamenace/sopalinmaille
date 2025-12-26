@@ -9,7 +9,7 @@
 <body>
 
 <div class="card">
-  <h1>🧩 Ouvrez bien les yeux 👀​</h1>
+  <h1>🧩 Observez et réfléchissez bien</h1>
   <p>Quel est le point commun de ces 3 images ?</p>
 
   <!-- Images côte à côte -->
@@ -25,22 +25,28 @@
   <button onclick="checkAnswer()">Valider</button>
 
   <p id="error"></p>
+  <p id="hint"></p>
 </div>
 
 <script>
+let attempts2 = 0;
+
 function checkAnswer() {
-let value = document.getElementById("answer").value.trim().toLowerCase();
-  if (value === "bad bunny") {
+  let value = document.getElementById("answer").value.trim().toLowerCase();
+  const correct = "bad bunny"; // mot attendu
+
+  attempts2++;
+
+  if (value === correct.toLowerCase()) {
     window.location.href = "final.html";
   } else {
     document.getElementById("error").innerText = "Toujours pas 😈";
+    if (attempts2 >= 3) {
+      document.getElementById("hint").innerText = "🐰​😈​";
+    }
   }
 }
 </script>
 
 </body>
 </html>
-
-
-
-
