@@ -28,11 +28,7 @@
 
 <script>
 function checkAnswer() {
-  let value = document.getElementById("answer").value
-                .trim()
-                .toLowerCase()
-                .replace(/\s+/g, " "); // normalise les espaces
-
+let value = document.getElementById("answer").value.trim().toLowerCase();
   if (value === "bad bunny") {
     window.location.href = "final.html";
   } else {
@@ -43,4 +39,5 @@ function checkAnswer() {
 
 </body>
 </html>
+
 
