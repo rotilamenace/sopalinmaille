@@ -3,34 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eh</title>
+  <title>Accès restreint</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="card">
-  <h1>🔒 Hop hop hop, pas si vite</h1>
-  <p>Débloque la suite en entrant le mot de passe caché dans les mots croisés de Mimi 🔑​</p>
+  <h1>🔒 Accès protégé</h1>
+  <p>Entre le mot de passe pour continuer.</p>
 
   <input type="text" id="pwd1" placeholder="Mot de passe">
   <button onclick="checkPwd()">Valider</button>
 
   <p id="error"></p>
+  <p id="hint"></p>
 </div>
 
 <script>
+let attempts1 = 0;
+
 function checkPwd() {
-  if (document.getElementById("pwd1").value === "password") {
+  let value = document.getElementById("pwd1").value.trim().toLowerCase();
+  const correct = "secret1"; // remplace par ton mot de passe
+
+  attempts1++;
+
+  if (value === correct.toLowerCase()) {
     window.location.href = "enigme.html";
   } else {
     document.getElementById("error").innerText = "Raté 😏";
+    if (attempts1 >= 3) {
+      document.getElementById("hint").innerText = "🇺🇸​🇬🇧​🔏";
+    }
   }
 }
 </script>
 
 </body>
-
 </html>
-
-
-
