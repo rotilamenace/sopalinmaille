@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accès restreint</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="card">
+  <h1>🔒 Accès protégé</h1>
+  <p>Entre le mot de passe pour continuer.</p>
+
+  <input type="password" id="pwd1" placeholder="Mot de passe">
+  <button onclick="checkPwd()">Valider</button>
+
+  <p id="error"></p>
+</div>
+
+<script>
+function checkPwd() {
+  if (document.getElementById("pwd1").value === "password") {
+    window.location.href = "enigme.html";
+  } else {
+    document.getElementById("error").innerText = "Raté 😏";
+  }
+}
+</script>
+
+</body>
+</html>
