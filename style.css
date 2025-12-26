@@ -1,7 +1,8 @@
+/* Police globale */
 body {
-  font-family: Arial, sans-serif;
-  background: #111;
-  color: white;
+  font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: #f5f7fa; /* fond clair */
+  color: #333;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,57 +10,88 @@ body {
   margin: 0;
 }
 
+/* Carte centrale */
 .card {
-  background: #1e1e1e;
-  padding: 20px;
-  border-radius: 12px;
-  max-width: 350px;
+  background: #ffffff;
+  padding: 25px 20px;
+  border-radius: 16px;
+  max-width: 400px;
   width: 90%;
   text-align: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
 }
 
+/* Titres */
+.card h1 {
+  font-size: 1.8em;
+  margin-bottom: 15px;
+  color: #ff6b81; /* rose doux */
+}
+
+/* Paragraphes */
+.card p {
+  font-size: 1em;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+/* Inputs */
 input {
   width: 100%;
-  padding: 12px;
+  padding: 14px;
   margin: 10px 0;
-  border-radius: 6px;
-  border: none;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+  outline: none;
+  transition: border 0.2s;
 }
 
+input:focus {
+  border-color: #ff6b81;
+}
+
+/* Boutons */
 button {
   width: 100%;
-  padding: 12px;
-  background: #ff9800;
+  padding: 14px;
+  background: #ff6b81;
+  color: white;
   border: none;
-  border-radius: 6px;
-  font-size: 16px;
+  border-radius: 10px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.3s;
 }
 
-img {
-  width: 100%;
-  border-radius: 8px;
-  margin: 15px 0;
+button:hover {
+  background: #ff4757;
 }
 
+/* Messages d'erreur */
 #error {
-  color: #ff6b6b;
+  color: #ff4b4b;
   margin-top: 10px;
+  font-weight: bold;
 }
 
+/* Images côte à côte */
 .images {
   display: flex;
   gap: 10px;
-  align-items: center; /* centre verticalement */
+  align-items: center;
+  margin: 15px 0;
 }
 
 .images img {
   width: 100%;
   max-width: 48%;
   object-fit: contain;
-  border-radius: 8px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-/* Option mobile : empiler les images */
+/* Responsive mobile */
 @media (max-width: 480px) {
   .images {
     flex-direction: column;
