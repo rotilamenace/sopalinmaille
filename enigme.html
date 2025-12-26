@@ -28,9 +28,12 @@
 
 <script>
 function checkAnswer() {
-  const value = document.getElementById("answer").value.trim().toLowerCase();
+  let value = document.getElementById("answer").value
+                .trim()
+                .toLowerCase()
+                .replace(/\s+/g, " "); // normalise les espaces
 
-  if (value === "Bad Bunny") {
+  if (value === "bad bunny") {
     window.location.href = "final.html";
   } else {
     document.getElementById("error").innerText = "Toujours pas 😈";
@@ -40,3 +43,4 @@ function checkAnswer() {
 
 </body>
 </html>
+
